@@ -11,17 +11,17 @@
 <body>
     <main>
         <div class="wrapper">
-            <h2>Jusson el a kezdeti szótól a cél szóig, mingid csak egy betű változtatásával!</h2>
+            <h2>Jusson el a kezdeti szótól a cél szóig, mindig csak egy betű változtatásával!</h2>
             <form>
-                <!-- <div class="input-elements">
-                    <input type="text" name="" id="start-word" disabled>
-                    <input type="text" name="" id="intermediate-word" maxlength="3">
-                    <input type="text" name="" id="end-word" disabled>
-                </div> -->
-                <h3>Felhasznált szavak száma: <span id="word-count"></span></h3>
-                <button class="start" type="button">Kezdés</button>
+                <div class="input-elements">
+                    <!-- A három input mező, amelyek a kiinduló, középső és végszót jelenítik meg -->
+                    <input type="text" id="left" disabled>
+                    <input type="text" id="middle" maxlength="3">
+                    <input type="text" id="right" disabled>
+                </div>
+                <h3>Felhasznált szavak száma: <span id="wordCount">0</span></h3>
+                <button id="start" class="start" type="button">Kezdés</button>
             </form>
-
         </div>
     </main>
 </body>

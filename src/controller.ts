@@ -26,6 +26,7 @@ const handleInput = (value: string) => {
     }
 };
 
+
 view.init({
     startGame,
     handleInput,

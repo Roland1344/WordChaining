@@ -17,7 +17,6 @@ const initializeWords = () => {
 };
 exports.initializeWords = initializeWords;
 const addInputValue = (value) => {
-    // 3 karakter legalabb
     if (value && value.length === 3 && !value.includes(" ")) {
         inputValues.push(value);
         return true;
