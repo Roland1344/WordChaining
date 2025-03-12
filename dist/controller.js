@@ -44,10 +44,18 @@ const createController = () => {
         if (model.getCurrentWord() === model.getTargetWord()) {
             return;
         }
-        model.addInputValue(value);
-        view.updateWordCount(model.getInputValues());
-        if (model.getCurrentWord() === model.getTargetWord()) {
-            view.disableMiddleInput();
+        const valid = model.addInputValue(value);
+        if (valid) {
+            view.updateWordCount(model.getInputValues());
+            view.clearMiddleInput();
+            model.setCurrentWord(value);
+            if (model.getCurrentWord() === model.getTargetWord()) {
+                view.disableMiddleInput();
+            }
+        }
+        else {
+            alert("Érvénytelen szó!\n Kérlek, adj meg egy három karakterből álló szót.");
+            view.clearMiddleInput();
         }
     };
     view.init({

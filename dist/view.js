@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.disableMiddleInput = exports.updateWordCount = exports.renderWords = exports.init = void 0;
+exports.clearMiddleInput = exports.disableMiddleInput = exports.updateWordCount = exports.renderWords = exports.init = void 0;
 const startButton = document.getElementById("start");
 const leftInput = document.getElementById("left");
 const middleInput = document.getElementById("middle");
@@ -30,3 +30,8 @@ const disableMiddleInput = () => {
     middleInput.disabled = true;
 };
 exports.disableMiddleInput = disableMiddleInput;
+const clearMiddleInput = () => {
+    middleInput.value = "";
+    middleInput.focus();
+};
+exports.clearMiddleInput = clearMiddleInput;
