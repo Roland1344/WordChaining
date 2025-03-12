@@ -4,7 +4,7 @@ interface Model {
     inputValues: string[];
 }
 
-const View = {
+export const View = {
     startButton: document.getElementById("start") as HTMLButtonElement,
     leftInput: document.getElementById("left") as HTMLInputElement,
     middleInput: document.getElementById("middle") as HTMLInputElement,
