@@ -1,9 +1,7 @@
-
 import * as view from "./view.js";
 import * as model from "./model.js";
 
 const createController = () => {
-
     const startGame = () => {
         model.initializeWords(); 
         view.renderWords(model.getCurrentWord(), model.getTargetWord());
@@ -13,12 +11,19 @@ const createController = () => {
         if (model.getCurrentWord() === model.getTargetWord()) {
             return; 
         }
+        const valid = model.addInputValue(value);
 
-        model.addInputValue(value);
-        view.updateWordCount(model.getInputValues());
+        if (valid) {
+            view.updateWordCount(model.getInputValues());
+            view.clearMiddleInput();
+            model.setCurrentWord(value);
 
-        if (model.getCurrentWord() === model.getTargetWord()) {
-            view.disableMiddleInput();
+            if (model.getCurrentWord() === model.getTargetWord()) {
+                view.disableMiddleInput();
+            }
+        } else {
+            alert("Érvénytelen szó!\n Kérlek, adj meg egy három karakterből álló szót.");
+            view.clearMiddleInput(); 
         }
     };
 

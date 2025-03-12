@@ -1,5 +1,5 @@
+export { initializeWords, addInputValue, getCurrentWord, getTargetWord, getInputValues, setCurrentWord };
 
-export { initializeWords, addInputValue, getCurrentWord, getTargetWord, getInputValues };
 const words = [
     "ház", "kár", "lap", "nap", "rak", "tál", "fut", "rög", "döf", "nép", "kép", "tol", "húz", "bál", "jár",
     "rák", "láb", "tép", "kút", "búg", "túr", "lép", "súg", "nől", "fől", "baj", "vaj", "haj", "raj", "víg",
@@ -18,13 +18,18 @@ const initializeWords = () => {
 };
 
 const addInputValue = (value: string) => {
-    if (value && !value.includes(" ")) {
+    // 3 karakter legalabb
+    if (value && value.length === 3 && !value.includes(" ")) {
         inputValues.push(value);
+        return true; 
     }
+    return false; 
 };
 
 const getCurrentWord = () => currentWord;
 const getTargetWord = () => targetWord;
 const getInputValues = () => inputValues;
 
-
+const setCurrentWord = (newWord: string) => {
+    currentWord = newWord;
+};

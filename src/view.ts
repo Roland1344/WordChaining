@@ -1,4 +1,4 @@
-export { init, renderWords, updateWordCount, disableMiddleInput };
+export { init, renderWords, updateWordCount, disableMiddleInput, clearMiddleInput };
 
 const startButton = document.getElementById("start") as HTMLButtonElement;
 const leftInput = document.getElementById("left") as HTMLInputElement;
@@ -30,4 +30,7 @@ const disableMiddleInput = () => {
     middleInput.disabled = true;
 };
 
-
+const clearMiddleInput = () => {
+    middleInput.value = "";
+    middleInput.focus();
+};
