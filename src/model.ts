@@ -1,5 +1,3 @@
-export { initializeWords, addInputValue, getCurrentWord, getTargetWord, getInputValues, setCurrentWord };
-
 const words = [
     "ház", "kár", "lap", "nap", "rak", "tál", "fut", "rög", "döf", "nép", "kép", "tol", "húz", "bál", "jár",
     "rák", "láb", "tép", "kút", "búg", "túr", "lép", "súg", "nől", "fől", "baj", "vaj", "haj", "raj", "víg",
@@ -11,25 +9,24 @@ let currentWord = "";
 let targetWord = "";
 let inputValues: string[] = [];
 
-const initializeWords = () => {
+export const initializeWords = () => {
     const randomIndex = () => Math.floor(Math.random() * words.length);
     currentWord = words[randomIndex()];
     targetWord = words[randomIndex()];
 };
 
-const addInputValue = (value: string) => {
-    // 3 karakter legalabb
+export const addInputValue = (value: string) => {
     if (value && value.length === 3 && !value.includes(" ")) {
         inputValues.push(value);
-        return true; 
+        return true;
     }
-    return false; 
+    return false;
 };
 
-const getCurrentWord = () => currentWord;
-const getTargetWord = () => targetWord;
-const getInputValues = () => inputValues;
+export const getCurrentWord = () => currentWord;
+export const getTargetWord = () => targetWord;
+export const getInputValues = () => inputValues;
 
-const setCurrentWord = (newWord: string) => {
+export const setCurrentWord = (newWord: string) => {
     currentWord = newWord;
 };
