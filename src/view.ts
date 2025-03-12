@@ -13,7 +13,7 @@ const View = {
 
     init(controller: any) {
         this.startButton.addEventListener("click", () => controller.startGame());
-        this.middleInput.addEventListener("keypress", (event: KeyboardEvent) => {
+        this.middleInput.addEventListener("keypress", (event) => {
             if (event.key === "Enter") {
                 controller.handleInput(this.middleInput.value);
             }
